@@ -22,7 +22,7 @@ namespace TriangleSolverUnitTest
          * **/
 
         [Test]
-        public void AnalyzeTriangle_Input6_OutputEquilateralTriange()
+        public void AnalyzeTriangle_Input6_OutputEquilateralTriangle()
         {
             //Arrange
             int side1 = 6; // All 3 sides equal in an equilateral triangle
@@ -40,7 +40,7 @@ namespace TriangleSolverUnitTest
          * **/
 
         [Test]
-        public void AnalyzeTriangle_Input7and7and4_OutputIsoscelesTriange()
+        public void AnalyzeTriangle_Input7and7and4_OutputIsoscelesTriangle()
         {
             //Arrange
             int side1 = 7;
@@ -56,7 +56,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input8and8and5_OutputIsoscelesTriange()
+        public void AnalyzeTriangle_Input8and8and5_OutputIsoscelesTriangle()
         {
             //Arrange
             int side1 = 8;
@@ -72,7 +72,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input20and20and14_OutputIsoscelesTriange()
+        public void AnalyzeTriangle_Input20and20and14_OutputIsoscelesTriangle()
         {
             //Arrange
             int side1 = 20;
@@ -92,7 +92,7 @@ namespace TriangleSolverUnitTest
          ***/
 
         [Test]
-        public void AnalyzeTriangle_Input7and10and5_OutputScaleneTriange() {
+        public void AnalyzeTriangle_Input7and10and5_OutputScaleneTriangle() {
             //Arrange
             int side1 = 7;
             int side2 = 10;
@@ -107,7 +107,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input12and15and17_OutputScaleneTriange()
+        public void AnalyzeTriangle_Input12and15and17_OutputScaleneTriangle()
         {
             //Arrange
             int side1 = 12;
@@ -123,7 +123,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input11and16and20_OutputScaleneTriange()
+        public void AnalyzeTriangle_Input11and16and20_OutputScaleneTriangle()
         {
             //Arrange
             int side1 = 11;
@@ -139,7 +139,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input18and24and30_OutputScaleneTriange()
+        public void AnalyzeTriangle_Input18and24and30_OutputScaleneTriangle()
         {
             //Arrange
             int side1 = 18;
@@ -155,7 +155,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input27and36and45_OutputScaleneTriange()
+        public void AnalyzeTriangle_Input27and36and45_OutputScaleneTriangle()
         {
             //Arrange
             int side1 = 12;
@@ -174,7 +174,7 @@ namespace TriangleSolverUnitTest
          * Three tests for verifying a zero length for one or more sides
          **/
         [Test]
-        public void AnalyzeTriangle_Input0and3and5_OutputInvalidTriange()
+        public void AnalyzeTriangle_Input0and3and5_OutputInvalidTriangle()
         {
             //Arrange
             int side1 = 0;
@@ -190,7 +190,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input0and0and5_OutputInvalidTriange()
+        public void AnalyzeTriangle_Input0and0and5_OutputInvalidTriangle()
         {
             //Arrange
             int side1 = 0;
@@ -206,7 +206,7 @@ namespace TriangleSolverUnitTest
         }
 
         [Test]
-        public void AnalyzeTriangle_Input0and0and0_OutputInvalidTriange()
+        public void AnalyzeTriangle_Input0and0and0_OutputInvalidTriangle()
         {
             //Arrange
             int side1 = 0;
@@ -219,6 +219,55 @@ namespace TriangleSolverUnitTest
 
             //Assert
             Assert.That(actual, Is.EqualTo(invalidTriangleMessage));
+        }
+
+        /** Invalid response tests
+        * Three (3) tests for verifying an invalid response 
+        **/
+        [Test]
+        public void AnalyzeTriangle_Input3and1and1_OutputNotTriangle()
+        {
+            //Arrange
+            int side1 = 3;
+            int side2 = 1;
+            int side3 = 1;
+            //expected message : "At least one side entered had a zero - invalid triangle";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(triangleNotFormedMessage));
+        }
+        [Test]
+        public void AnalyzeTriangle_Input3andminus1and1_OutputNotTriangle()
+        {
+            //Arrange
+            int side1 = 3;
+            int side2 = -1;
+            int side3 = 1;
+            //expected message : "At least one side entered had a zero - invalid triangle";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(triangleNotFormedMessage));
+        }
+        [Test]
+        public void AnalyzeTriangle_Input30and10and1_OutputNotTriangle()
+        {
+            //Arrange
+            int side1 = 30;
+            int side2 = 10;
+            int side3 = 1;
+            //expected message : "At least one side entered had a zero - invalid triangle";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(triangleNotFormedMessage));
         }
     }
 }
