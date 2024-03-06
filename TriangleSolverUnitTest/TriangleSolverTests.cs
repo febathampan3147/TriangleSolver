@@ -169,5 +169,56 @@ namespace TriangleSolverUnitTest
             //Assert
             Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
         }
+
+        /** Zero length tests
+         * Three tests for verifying a zero length for one or more sides
+         **/
+        [Test]
+        public void AnalyzeTriangle_Input0and3and5_OutputInvalidTriange()
+        {
+            //Arrange
+            int side1 = 0;
+            int side2 = 3;
+            int side3 = 5;
+            //expected message : "At least one side entered had a zero - invalid triangle";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(invalidTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input0and0and5_OutputInvalidTriange()
+        {
+            //Arrange
+            int side1 = 0;
+            int side2 = 0;
+            int side3 = 5;
+            //expected message : "At least one side entered had a zero - invalid triangle";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(invalidTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input0and0and0_OutputInvalidTriange()
+        {
+            //Arrange
+            int side1 = 0;
+            int side2 = 0;
+            int side3 = 0;
+            //expected message : "At least one side entered had a zero - invalid triangle";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(invalidTriangleMessage));
+        }
     }
 }
