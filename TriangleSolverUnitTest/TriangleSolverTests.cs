@@ -22,7 +22,7 @@ namespace TriangleSolverUnitTest
          * **/
 
         [Test]
-        public void AnalyzeTriangle_Input6_OutputScaleneTriange()
+        public void AnalyzeTriangle_Input6_OutputEquilateralTriange()
         {
             //Arrange
             int side1 = 6; // All 3 sides equal in an equilateral triangle
@@ -105,6 +105,69 @@ namespace TriangleSolverUnitTest
             //Assert
             Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
         }
-        
+
+        [Test]
+        public void AnalyzeTriangle_Input12and15and17_OutputScaleneTriange()
+        {
+            //Arrange
+            int side1 = 12;
+            int side2 = 15;
+            int side3 = 17;
+            //expected message : "A scalene triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input11and16and20_OutputScaleneTriange()
+        {
+            //Arrange
+            int side1 = 11;
+            int side2 = 16;
+            int side3 = 20;
+            //expected message : "A scalene triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input18and24and30_OutputScaleneTriange()
+        {
+            //Arrange
+            int side1 = 18;
+            int side2 = 24;
+            int side3 = 30;
+            //expected message : "A scalene triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input27and36and45_OutputScaleneTriange()
+        {
+            //Arrange
+            int side1 = 12;
+            int side2 = 15;
+            int side3 = 17;
+            //expected message : "A scalene triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
+        }
     }
 }
