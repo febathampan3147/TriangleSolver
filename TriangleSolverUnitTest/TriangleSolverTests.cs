@@ -17,8 +17,11 @@ namespace TriangleSolverUnitTest
         public static String invalidTriangleMessage = "At least one side entered had a zero - invalid triangle";
         public static String triangleNotFormedMessage = "A triangle cannot be formed";
 
+        /**Equilateral Triange Test
+         * One test for a valid equilateral triangle
+         * **/
+
         [Test]
-        //Equilateral Triange Test
         public void AnalyzeTriangle_Input6_OutputScaleneTriange()
         {
             //Arrange
@@ -32,14 +35,68 @@ namespace TriangleSolverUnitTest
 
         }
 
-        //Scalene Triangle Test
+        /**Isosceles Triangle Test
+         *Three (3) tests for a valid isosceles triangle
+         * **/
+
         [Test]
-        public void AnalyzeTriangle_Input_7and10and5_OutputScaleneTriange() {
+        public void AnalyzeTriangle_Input7and7and4_OutputIsoscelesTriange()
+        {
+            //Arrange
+            int side1 = 7;
+            int side2 = 7;
+            int side3 = 4;
+            //expected message : "An isosceles triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(isoscelesTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input8and8and5_OutputIsoscelesTriange()
+        {
+            //Arrange
+            int side1 = 8;
+            int side2 = 8;
+            int side3 = 5;
+            //expected message : "An isosceles triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(isoscelesTriangleMessage));
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Input20and20and14_OutputIsoscelesTriange()
+        {
+            //Arrange
+            int side1 = 20;
+            int side2 = 20;
+            int side3 = 14;
+            //expected message : "An isosceles triangle is formed";
+
+            //Act
+            String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(isoscelesTriangleMessage));
+        }
+
+        /**Scalene Triangle Test
+         *Five tests for a valid scalene triangle
+         ***/
+
+        [Test]
+        public void AnalyzeTriangle_Input7and10and5_OutputScaleneTriange() {
             //Arrange
             int side1 = 7;
             int side2 = 10;
             int side3 = 5;
-
             //expected message : "A scalene triangle is formed";
 
             //Act
@@ -47,7 +104,7 @@ namespace TriangleSolverUnitTest
 
             //Assert
             Assert.That(actual, Is.EqualTo(scaleneTriangleMessage));
-
         }
+        
     }
 }
