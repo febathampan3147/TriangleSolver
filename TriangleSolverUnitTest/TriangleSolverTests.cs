@@ -231,7 +231,7 @@ namespace TriangleSolverUnitTest
             int side1 = 3;
             int side2 = 1;
             int side3 = 1;
-            //expected message : "At least one side entered had a zero - invalid triangle";
+            //expected message : "A triangle cannot be formed";
 
             //Act
             String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
@@ -246,7 +246,7 @@ namespace TriangleSolverUnitTest
             int side1 = 3;
             int side2 = -1;
             int side3 = 1;
-            //expected message : "At least one side entered had a zero - invalid triangle";
+            //expected message : "A triangle cannot be formed";
 
             //Act
             String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
@@ -261,7 +261,7 @@ namespace TriangleSolverUnitTest
             int side1 = 30;
             int side2 = 10;
             int side3 = 1;
-            //expected message : "At least one side entered had a zero - invalid triangle";
+            //expected message : "A triangle cannot be formed";
 
             //Act
             String actual = Triangle.AnalyzeTriangle(side1, side2, side3);
